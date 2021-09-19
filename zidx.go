@@ -12,7 +12,7 @@ func ZIndex(haystack, needle string) int {
 	}
 
 	lenZ := n + m
-	z := zFunc(needle, lenZ)
+	z := ZFunc(needle, lenZ)
 	li := 0
 	ri := 0
 
@@ -43,7 +43,7 @@ func ZIndex(haystack, needle string) int {
 	return -1
 }
 
-func zFunc(s string, lenZ int) []int {
+func ZFunc(s string, lenZ int) []int {
 	li := 0
 	ri := 0
 	z := make([]int, lenZ)
