@@ -1,8 +1,8 @@
 package zidx
 
-func ZIndex(str, subStr string) int {
-	n := len(str)
-	m := len(subStr)
+func ZIndex(haystack, needle string) int {
+	n := len(haystack)
+	m := len(needle)
 	if m == 0 {
 		return 0
 	}
@@ -12,7 +12,7 @@ func ZIndex(str, subStr string) int {
 	}
 
 	lenZ := n + m
-	z := zFunc(subStr, lenZ)
+	z := zFunc(needle, lenZ)
 	li := 0
 	ri := 0
 
@@ -27,7 +27,7 @@ func ZIndex(str, subStr string) int {
 		}
 
 		k := i - m
-		for k+z[i] < n && subStr[z[i]] == str[k+z[i]] {
+		for k+z[i] < n && needle[z[i]] == haystack[k+z[i]] {
 			z[i]++
 			if z[i] == m {
 				return k
